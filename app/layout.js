@@ -1,4 +1,5 @@
 import { Ubuntu_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const ubuntuMono = Ubuntu_Mono({
@@ -42,7 +43,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html className={ubuntuMono.variable} lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
