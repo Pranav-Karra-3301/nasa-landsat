@@ -1,4 +1,18 @@
+import { Ubuntu_Mono } from "next/font/google";
 import "./globals.css";
+
+const ubuntuMono = Ubuntu_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-ubuntu-mono",
+  display: "swap",
+});
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata = {
   title: "Landsat Alphabet API",
@@ -27,7 +41,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html className={ubuntuMono.variable} lang="en">
       <body>{children}</body>
     </html>
   );

@@ -1,3 +1,4 @@
+import { AgencyPartners, TopbarBrand } from "./components/AgencyPartners";
 import { CodeBlock } from "./components/CodeBlock";
 import { HeroImage } from "./components/HeroImage";
 
@@ -20,10 +21,9 @@ export default function HomePage() {
   return (
     <main className="page">
       <header className="topbar">
-        <a className="brand" href="/">
-          Landsat Alphabet API
-        </a>
+        <TopbarBrand />
         <nav className="nav" aria-label="Primary">
+          <a href="/playground">Playground</a>
           <a href={githubUrl}>GitHub</a>
           <a href="/openapi.json">OpenAPI</a>
           <a href="/llms.txt">llms.txt</a>
@@ -169,10 +169,16 @@ export default function HomePage() {
               Source imagery: NASA/USGS Landsat. This API is unofficial and is
               not endorsed by NASA.
             </p>
+            <AgencyPartners />
             <ul className="source-list">
               <li>
                 <a href="https://science.nasa.gov/mission/landsat/outreach/your-name-in-landsat/">
                   NASA Science: Your Name in Landsat
+                </a>
+              </li>
+              <li>
+                <a href="https://www.usgs.gov/landsat-missions">
+                  USGS: Landsat Missions
                 </a>
               </li>
               <li>
