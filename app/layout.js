@@ -25,9 +25,9 @@ export const metadata = {
     images: [
       {
         url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Landsat Alphabet API over false-color satellite imagery.",
+        width: 1131,
+        height: 954,
+        alt: "Landsat Alphabet API homepage preview.",
       },
     ],
   },
