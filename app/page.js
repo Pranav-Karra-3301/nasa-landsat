@@ -37,7 +37,11 @@ export default function HomePage() {
           <p className="lede">
             One URL in, one cached PNG out. Render text as stitched NASA/USGS
             Landsat letter imagery with deterministic variants and immutable
-            cache headers.
+            cache headers. The project is open source.
+          </p>
+          <p className="hero-opensource">
+            Source code and issues:{" "}
+            <a href={githubUrl}>github.com/Pranav-Karra-3301/nasa-landsat</a>
           </p>
           <div className="hero-actions">
             <a className="primary-link" href="/v1/name/LANDSAT.png?size=512&gap=8">
