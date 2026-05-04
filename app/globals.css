@@ -154,18 +154,6 @@ h1 {
   max-width: 620px;
 }
 
-.hero-opensource {
-  color: var(--muted);
-  font-size: 15px;
-  line-height: 1.5;
-  margin: 16px 0 0;
-  max-width: 620px;
-}
-
-.hero-opensource a {
-  font-weight: 600;
-}
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -493,10 +481,6 @@ pre code {
 
   .lede {
     font-size: 18px;
-  }
-
-  .hero-opensource {
-    font-size: 14px;
   }
 
   summary {
