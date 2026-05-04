@@ -11,6 +11,8 @@
     "test": "node --test test/*.test.mjs",
     "landsat:cache": "node scripts/cache-landsat.mjs",
     "landsat:tiles": "node scripts/build-landsat-tiles.mjs",
+    "cloudflare:setup": "node scripts/configure-cloudflare.mjs",
+    "og:image": "node scripts/build-og-image.mjs",
     "verify:determinism": "node scripts/verify-determinism.mjs",
     "verify:http": "node scripts/verify-http.mjs",
     "bench:local": "node scripts/benchmark-local.mjs"

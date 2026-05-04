@@ -1,4 +1,4 @@
-# Landsat Name API
+# Landsat Alphabet API
 
 A public deterministic API that renders text as a PNG stitched from NASA/USGS
 Landsat letter imagery.

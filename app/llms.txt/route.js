@@ -4,11 +4,11 @@ export const runtime = "nodejs";
 
 export async function GET(request) {
   const origin = new URL(request.url).origin;
-  const body = `# Landsat Name API
+  const body = `# Landsat Alphabet API
 
 Base URL: ${origin}
 
-The Landsat Name API renders text as a deterministic PNG stitched from NASA/USGS Landsat letter imagery. It is unofficial and is not endorsed by NASA.
+The Landsat Alphabet API renders text as a deterministic PNG stitched from NASA/USGS Landsat letter imagery. It is unofficial and is not endorsed by NASA.
 
 ## Quick usage
 

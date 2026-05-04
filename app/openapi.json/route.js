@@ -7,7 +7,7 @@ export async function GET(request) {
   const spec = {
     openapi: "3.1.0",
     info: {
-      title: "Landsat Name API",
+      title: "Landsat Alphabet API",
       version: "1.0.0",
       description:
         "A public deterministic API that renders text as stitched Landsat letter imagery. Source imagery: NASA/USGS Landsat. Unofficial; not endorsed by NASA.",

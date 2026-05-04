@@ -1,14 +1,27 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Landsat Name API",
+  title: "Landsat Alphabet API",
   description:
-    "A public deterministic API that renders text as stitched NASA/USGS Landsat letter imagery.",
+    "A public deterministic API that renders names with NASA/USGS Landsat alphabet imagery.",
   metadataBase: new URL("https://landsat.pranavkarra.me"),
   openGraph: {
-    title: "Landsat Name API",
-    description: "One URL in, one cached Landsat-imagery PNG out.",
-    images: ["/v1/name/LANDSAT.png?size=512&gap=8"],
+    title: "Landsat Alphabet API",
+    description: "Write your name as a deterministic NASA/USGS Landsat image API.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Landsat Alphabet API over false-color satellite imagery.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Landsat Alphabet API",
+    description: "Write your name as a deterministic NASA/USGS Landsat image API.",
+    images: ["/og-image.png"],
   },
 };
 

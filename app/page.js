@@ -1,7 +1,7 @@
 import { CodeBlock } from "./components/CodeBlock";
 import { HeroImage } from "./components/HeroImage";
 
-const githubUrl = "https://github.com/pranavkarra/nasa-landsat";
+const githubUrl = "https://github.com/Pranav-Karra-3301/nasa-landsat";
 
 const htmlExample = `<img
   src="https://landsat.pranavkarra.me/v1/name/PRANAV.png"
@@ -21,7 +21,7 @@ export default function HomePage() {
     <main className="page">
       <header className="topbar">
         <a className="brand" href="/">
-          Landsat Name API
+          Landsat Alphabet API
         </a>
         <nav className="nav" aria-label="Primary">
           <a href={githubUrl}>GitHub</a>
@@ -33,7 +33,7 @@ export default function HomePage() {
       <section className="hero" aria-labelledby="page-title">
         <div>
           <p className="eyebrow">Public deterministic image API</p>
-          <h1 id="page-title">Landsat Name API</h1>
+          <h1 id="page-title">Landsat Alphabet API</h1>
           <p className="lede">
             One URL in, one cached PNG out. Render text as stitched NASA/USGS
             Landsat letter imagery with deterministic variants and immutable
@@ -69,7 +69,8 @@ export default function HomePage() {
         <details>
           <summary>Endpoints</summary>
           <div className="section-body">
-            <table className="endpoint-table">
+            <div className="table-panel">
+              <table className="endpoint-table">
               <thead>
                 <tr>
                   <th>Endpoint</th>
@@ -109,13 +110,15 @@ export default function HomePage() {
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
         </details>
 
         <details>
           <summary>Parameters</summary>
           <div className="section-body">
-            <table className="parameter-table">
+            <div className="table-panel">
+              <table className="parameter-table">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -155,6 +158,7 @@ export default function HomePage() {
                 </tr>
               </tbody>
             </table>
+            </div>
           </div>
         </details>
 

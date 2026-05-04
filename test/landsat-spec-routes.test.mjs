@@ -29,6 +29,6 @@ test("llms route explains copy-paste usage", async () => {
   const body = await response.text();
 
   assert.equal(response.headers.get("content-type"), "text/plain; charset=utf-8");
-  assert.match(body, /Landsat Name API/);
+  assert.match(body, /Landsat Alphabet API/);
   assert.match(body, /\/v1\/name\/PRANAV\.png/);
 });

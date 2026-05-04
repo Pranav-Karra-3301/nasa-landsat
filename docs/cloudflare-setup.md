@@ -68,3 +68,21 @@ Block or Managed Challenge
 
 Use Managed Challenge if you want friendlier behavior for accidental bursts.
 Use Block if the goal is strict API protection.
+
+## API Setup Script
+
+If you have a Cloudflare API token with Zone DNS Edit and Zone WAF Edit
+permissions, the project can configure the DNS record and rate limit rule:
+
+```bash
+CLOUDFLARE_API_TOKEN=... pnpm run cloudflare:setup
+```
+
+Optional environment variables:
+
+```txt
+CLOUDFLARE_ZONE_NAME=pranavkarra.me
+LANDSAT_HOSTNAME=landsat.pranavkarra.me
+LANDSAT_TARGET_IP=76.76.21.21
+CLOUDFLARE_PROXIED=false
+```
