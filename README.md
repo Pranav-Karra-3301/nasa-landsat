@@ -55,3 +55,13 @@ Sources:
 
 - NASA Science, Your Name in Landsat: https://science.nasa.gov/mission/landsat/outreach/your-name-in-landsat/
 - NASA Images and Media Guidelines: https://www.nasa.gov/nasa-brand-center/images-and-media/
+
+## Deployment
+
+Production Vercel URL:
+
+- https://nasa-landsat-eta.vercel.app
+
+Custom domain setup:
+
+- See `docs/cloudflare-setup.md`
