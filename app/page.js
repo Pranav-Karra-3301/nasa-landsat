@@ -31,7 +31,7 @@ export default function HomePage() {
       </header>
 
       <section className="hero" aria-labelledby="page-title">
-        <div>
+        <div className="hero-copy">
           <p className="eyebrow">Public deterministic image API</p>
           <h1 id="page-title">Landsat Alphabet API</h1>
           <p className="lede">
