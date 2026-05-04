@@ -23,10 +23,18 @@ export default function HomePage() {
       <header className="topbar">
         <TopbarBrand />
         <nav className="nav" aria-label="Primary">
-          <a href="/playground">Playground</a>
-          <a href={githubUrl}>GitHub</a>
-          <a href="/openapi.json">OpenAPI</a>
-          <a href="/llms.txt">llms.txt</a>
+          <a className="secondary-link" href="/playground">
+            Playground
+          </a>
+          <a className="secondary-link" href={githubUrl}>
+            GitHub
+          </a>
+          <a className="secondary-link" href="/openapi.json">
+            OpenAPI
+          </a>
+          <a className="secondary-link" href="/llms.txt">
+            llms.txt
+          </a>
         </nav>
       </header>
 

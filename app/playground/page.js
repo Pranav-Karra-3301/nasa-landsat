@@ -15,9 +15,15 @@ export default function PlaygroundPage() {
       <header className="topbar">
         <TopbarBrand />
         <nav className="nav" aria-label="Primary">
-          <a href="/">Home</a>
-          <a href={githubUrl}>GitHub</a>
-          <a href="/openapi.json">OpenAPI</a>
+          <a className="secondary-link" href="/">
+            Home
+          </a>
+          <a className="secondary-link" href={githubUrl}>
+            GitHub
+          </a>
+          <a className="secondary-link" href="/openapi.json">
+            OpenAPI
+          </a>
         </nav>
       </header>
 

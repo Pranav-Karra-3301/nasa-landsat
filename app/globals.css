@@ -201,8 +201,8 @@ select {
 
 @media (max-width: 760px) {
   .brand-logo-sheet .brand-logo-img {
-    max-height: 26px;
-    max-width: min(118px, 38vw);
+    max-height: 44px;
+    max-width: min(176px, 48vw);
   }
 
   .brand.brand-logos {
@@ -234,53 +234,8 @@ select {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
   justify-content: flex-end;
-}
-
-/* Glassy command buttons on title bar */
-.nav a {
-  align-items: center;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  border-radius: var(--radius-keycap);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
-  color: #ffffff;
-  display: inline-flex;
-  font-size: 13px;
-  font-weight: 600;
-  justify-content: center;
-  min-height: 44px;
-  padding: 8px 14px;
-  text-decoration: none;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
-  transition:
-    background 0.15s ease,
-    box-shadow 0.15s ease,
-    transform 0.12s ease;
-}
-
-.nav a:hover {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.22) 100%);
-  box-shadow:
-    0 2px 6px rgba(0, 0, 0, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.85);
-  color: #ffffff;
-  transform: translateY(-1px);
-}
-
-.nav a:active {
-  box-shadow: inset 0 2px 5px rgba(0, 30, 70, 0.35);
-  transform: translateY(0);
-}
-
-.nav a:focus-visible {
-  border-radius: var(--radius-keycap);
-  color: #ffffff;
-  outline: 2px solid rgba(255, 255, 255, 0.95);
-  outline-offset: 2px;
 }
 
 .hero {
@@ -382,11 +337,16 @@ h1 {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.35);
 }
 
+.primary-link:visited {
+  color: #ffffff;
+}
+
 .primary-link:hover {
   background: linear-gradient(180deg, #93caff 0%, #55a2eb 20%, var(--accent-mid) 55%, #1d6ec9 100%);
   box-shadow:
     0 3px 8px rgba(0, 50, 120, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  color: #ffffff;
 }
 
 .primary-link:active {
@@ -406,11 +366,16 @@ h1 {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
+.secondary-link:visited {
+  color: var(--foreground);
+}
+
 .secondary-link:hover {
   background: linear-gradient(180deg, #ffffff 0%, #f0f4f8 50%, #d8dfe6 100%);
   box-shadow:
     0 3px 8px rgba(0, 0, 0, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 1);
+  color: var(--foreground);
 }
 
 .secondary-link:active {
@@ -1201,24 +1166,28 @@ pre code {
 }
 
 @media (max-width: 760px) {
+  /*
+   * Mobile: rounded title bar inside horizontal gutters. Top inset lives on .page
+   * so the bar clears the viewport edge; inner topbar padding stays rhythmic only.
+   */
   .page {
-    padding: max(20px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px))
-      max(44px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+    padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px))
+      max(44px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
   }
 
   .topbar {
     align-items: stretch;
-    border-radius: 0;
-    box-shadow: 0 3px 14px rgba(0, 40, 90, 0.14);
+    border-radius: var(--radius-panel);
+    box-shadow:
+      var(--window-shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.45);
     flex-direction: column;
     gap: 12px;
-    margin-bottom: 4px;
-    margin-left: calc(-1 * max(12px, env(safe-area-inset-left, 0px)));
-    margin-right: calc(-1 * max(12px, env(safe-area-inset-right, 0px)));
-    padding: 12px max(12px, env(safe-area-inset-right, 0px)) 14px max(12px, env(safe-area-inset-left, 0px));
-    width: calc(
-      100% + max(12px, env(safe-area-inset-left, 0px)) + max(12px, env(safe-area-inset-right, 0px))
-    );
+    margin-bottom: 12px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 14px 16px 16px;
+    width: 100%;
   }
 
   .nav {
@@ -1229,17 +1198,34 @@ pre code {
     width: 100%;
   }
 
-  .nav a {
+  .nav .primary-link,
+  .nav .secondary-link {
     flex: unset;
-    font-size: 13px;
+    font-size: 14px;
     min-width: 0;
-    padding: 10px 8px;
-    text-align: center;
+    padding: 0 16px;
+    width: 100%;
   }
 
   .hero {
     gap: 22px;
     padding: 22px 0 40px;
+  }
+
+  /* Full-width scale; height follows the stitched PNG aspect ratio. */
+  .hero .hero-preview-img {
+    height: auto;
+    width: 100%;
+  }
+
+  .hero .hero-preview {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .hero .preview-caption {
+    align-items: flex-start;
+    padding: 10px 12px;
   }
 
   .lede {
@@ -1312,12 +1298,18 @@ pre code {
     width: 100%;
   }
 
-  .preview-caption {
+  .hero .preview-caption {
+    align-items: flex-start;
     flex-direction: column;
-    row-gap: 8px;
+    row-gap: 6px;
   }
 
-  .preview-caption-label {
+  .hero .preview-caption-url {
+    flex: 0 1 auto;
+    width: 100%;
+  }
+
+  .hero .preview-caption-label {
     flex-shrink: 0;
   }
 }

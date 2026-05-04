@@ -3,8 +3,8 @@ import Image from "next/image";
 const nasa = { src: "/nasa.png", width: 3840, height: 2160 };
 const usgs = { src: "/usgs.png", width: 1336, height: 534 };
 
-const NASA_TOPBAR_H = 40;
-const USGS_TOPBAR_H = 40;
+const NASA_TOPBAR_H = 48;
+const USGS_TOPBAR_H = 48;
 const NASA_TOPBAR_W = Math.round((nasa.width * NASA_TOPBAR_H) / nasa.height);
 const USGS_TOPBAR_W = Math.round((usgs.width * USGS_TOPBAR_H) / usgs.height);
 
