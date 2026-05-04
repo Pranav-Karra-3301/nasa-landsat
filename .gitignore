@@ -7,3 +7,4 @@ node_modules/
 
 # Local full-resolution NASA downloads are intentionally kept out of deploys.
 data/landsat/originals/
+.vercel
