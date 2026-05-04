@@ -207,6 +207,28 @@ select {
   }
 }
 
+@media (max-width: 760px) {
+  .brand-logo-sheet {
+    padding: 4px 8px;
+  }
+
+  .brand-logo-sheet .brand-logo-img {
+    max-height: 26px;
+    max-width: min(118px, 38vw);
+  }
+
+  .brand.brand-logos {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .brand-logos-visual {
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 .visually-hidden {
   border-width: 0;
   clip: rect(0, 0, 0, 0);
@@ -1167,35 +1189,49 @@ pre code {
 
 @media (max-width: 760px) {
   .page {
-    padding: max(24px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px))
-      max(48px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+    padding: max(20px, env(safe-area-inset-top, 0px)) max(12px, env(safe-area-inset-right, 0px))
+      max(44px, env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
   }
 
   .topbar {
     align-items: stretch;
+    border-radius: 0;
+    box-shadow: 0 3px 14px rgba(0, 40, 90, 0.14);
     flex-direction: column;
-    gap: 14px;
-    padding: 14px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px));
+    gap: 12px;
+    margin-bottom: 4px;
+    margin-left: calc(-1 * max(12px, env(safe-area-inset-left, 0px)));
+    margin-right: calc(-1 * max(12px, env(safe-area-inset-right, 0px)));
+    padding: 12px max(12px, env(safe-area-inset-right, 0px)) 14px max(12px, env(safe-area-inset-left, 0px));
+    width: calc(
+      100% + max(12px, env(safe-area-inset-left, 0px)) + max(12px, env(safe-area-inset-right, 0px))
+    );
   }
 
   .nav {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
     justify-content: stretch;
     width: 100%;
   }
 
   .nav a {
-    flex: 1 1 calc(33.333% - 6px);
+    flex: unset;
+    font-size: 13px;
     min-width: 0;
+    padding: 10px 8px;
     text-align: center;
   }
 
   .hero {
-    gap: 28px;
-    padding: 32px 0 48px;
+    gap: 22px;
+    padding: 22px 0 40px;
   }
 
   .lede {
     font-size: 18px;
+    max-width: none;
   }
 
   .copy-button {
@@ -1253,6 +1289,16 @@ pre code {
 }
 
 @media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .primary-link,
+  .hero-actions .secondary-link {
+    justify-content: center;
+    width: 100%;
+  }
+
   .preview-caption {
     flex-direction: column;
     row-gap: 8px;
