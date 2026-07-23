@@ -162,3 +162,8 @@ Public domain:
 Custom domain setup:
 
 - See `docs/cloudflare-setup.md`
+
+## Credits
+
+Built by [Pranav Karra](https://pranavkarra.me). Source imagery NASA/USGS
+Landsat. This project is unofficial and is not endorsed by NASA.
