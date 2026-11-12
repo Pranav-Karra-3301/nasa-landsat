@@ -1,5 +1,4 @@
 import { Ubuntu_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const ubuntuMono = Ubuntu_Mono({
@@ -110,7 +109,6 @@ export default function RootLayout({ children }) {
     <html className={ubuntuMono.variable} lang="en">
       <body>
         {children}
-        <Analytics />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

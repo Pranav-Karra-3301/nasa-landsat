@@ -7,7 +7,7 @@ import {
   selectLetters,
 } from "../../../../lib/landsat.js";
 import { loadPublicManifest } from "../../../../lib/public-manifest.js";
-import { renderNamePng } from "../../../../lib/render.js";
+import { renderNamePngStream } from "../../../../lib/render.js";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -46,11 +46,23 @@ export async function GET(request, context) {
       });
     }
 
-    const png = await renderNamePng(normalizedText, manifest, options);
+    // Rendered PNGs are immutable, so keep them in the Cloudflare cache rather
+    // than re-stitching on every request (Workers responses bypass the CDN).
+    const cache = globalThis.caches?.default;
+    const cacheKey = buildRenderUrl(url, normalizedText, options);
+    const cached = await cache?.match(cacheKey);
+    if (cached) return new Response(cached.body, cached);
 
-    return new Response(png, {
-      headers: buildCacheHeaders("image/png"),
-    });
+    const headers = buildCacheHeaders("image/png");
+    const png = await renderNamePngStream(normalizedText, manifest, options);
+    if (!cache) return new Response(png, { headers });
+
+    const [body, copy] = png.tee();
+    const { getCloudflareContext } = await import("@opennextjs/cloudflare");
+    const { ctx } = await getCloudflareContext({ async: true });
+    ctx.waitUntil(cache.put(cacheKey, new Response(copy, { headers })).catch(() => {}));
+
+    return new Response(body, { headers });
   } catch (error) {
     return errorResponse(error);
   }
