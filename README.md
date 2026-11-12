@@ -151,17 +151,19 @@ Sources:
 
 ## Deployment
 
-Production Vercel URL:
-
-- https://nasa-landsat-eta.vercel.app
-
-Public domain:
+Hosted on Cloudflare Workers via OpenNext (`wrangler.jsonc`), served at:
 
 - https://landsat.pranavkarra.me
 
-Custom domain setup:
+```bash
+pnpm run preview   # build and run on local workerd
+pnpm run deploy    # build and deploy the nasa-landsat Worker
+```
 
-- See `docs/cloudflare-setup.md`
+PNG stitching uses a small dependency-free streaming PNG codec (`lib/png.js`)
+on the platform's native zlib streams, since native modules like sharp do not
+run on Workers. Tiles are read through the `ASSETS` binding, and rendered PNGs
+are stored in the Cloudflare cache.
 
 ## Credits
 

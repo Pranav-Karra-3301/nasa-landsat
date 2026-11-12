@@ -71,7 +71,6 @@ test("buildCacheHeaders exposes immutable public API caching and CORS", () => {
     "Cache-Control": "public, max-age=31536000, immutable",
     "CDN-Cache-Control": "public, max-age=31536000, immutable",
     "Content-Type": "image/png",
-    "Vercel-CDN-Cache-Control": "public, max-age=31536000, immutable",
     "X-Attribution": "Source imagery: NASA/USGS Landsat. Unofficial; not endorsed by NASA.",
   });
 });
